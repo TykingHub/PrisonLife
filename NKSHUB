@@ -1,3 +1,11 @@
+local gameId = game.PlaceId
+local allowedGameId = 155615604
+
+if gameId ~= allowedGameId then
+    game.Players.LocalPlayer:Kick("This script is only for Prison Life -- NKS HUB")
+    return
+end
+
 local UIS = game:GetService("UserInputService")
 local isMobile = UIS.TouchEnabled and not UIS.KeyboardEnabled and not UIS.MouseEnabled
 
