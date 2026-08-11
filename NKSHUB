@@ -1,0 +1,26 @@
+local UIS = game:GetService("UserInputService")
+local isMobile = UIS.TouchEnabled and not UIS.KeyboardEnabled and not UIS.MouseEnabled
+
+local function bypassAdonis()
+    if not game:IsLoaded() then game.Loaded:Wait() end
+    setthreadidentity(2)
+    local x
+    for i, v in getgc(true) do
+        if typeof(v) == "table" then
+            local a = rawget(v, "Detected")
+            if typeof(a) == "function" and not x then
+                x = a
+                hookfunction(x, function() return true end)
+            end
+        end
+    end
+    setthreadidentity(7)
+end
+
+bypassAdonis()
+
+if isMobile then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TykingHub/NKS_HUB987/refs/heads/main/PrisonLife.lua"))()
+else
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TykingHub/NKSHUB9995/refs/heads/main/PrisonLifeP.lua"))()
+end
