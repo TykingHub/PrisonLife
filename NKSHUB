@@ -2,7 +2,7 @@ local gameId = game.PlaceId
 local allowedGameId = 155615604
 
 if gameId ~= allowedGameId then
-    game.Players.LocalPlayer:Kick("This script is only for Prison Life -- NKS HUB")
+    game.Players.LocalPlayer:Kick("This script is only for Prison Life -- NKS HUB | JOIN .gg/M9SB5KTEm")
     return
 end
 
